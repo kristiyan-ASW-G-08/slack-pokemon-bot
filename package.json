@@ -1,0 +1,14 @@
+{
+  "name": "slack-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Kristiyan Todorov",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "slackbots": "^1.2.0"
+  }
+}
