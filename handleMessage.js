@@ -6,14 +6,15 @@ const handleMessage = async (message, bot, params) => {
     let message;
     const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`;
     const pokemonData = await getData(apiUrl);
-    const types = pokemonData.types;
-    let typesStr = '';
-    types.forEach(type => {
-      typesStr += `${type.type.name} `;
-    });
+
     if (pokemonData.error) {
       message = `Pokemon with name '${pokemonName}' wasn't found!`;
     } else {
+      const types = pokemonData.types;
+      let typesStr = '';
+      types.forEach(type => {
+        typesStr += `${type.type.name} `;
+      });
       message = `Name: ${pokemonData.name}  Weight: ${
         pokemonData.weight
       } Height: ${pokemonData.height} Types: ${typesStr} `;
